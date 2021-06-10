@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "856222886188",
+    "project_id": "home-assistance-v01",
+    "storage_bucket": "home-assistance-v01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856222886188:android:cde7f6f303bb3fa1ce2489",
+        "android_client_info": {
+          "package_name": "com.example.finalprojectassistance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "856222886188-mp1979u1e67tf60bn9v45amlp2spqp6f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_sipdOq4RwmDj624sTvcpiOY4V-k1Svk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "856222886188-mp1979u1e67tf60bn9v45amlp2spqp6f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
