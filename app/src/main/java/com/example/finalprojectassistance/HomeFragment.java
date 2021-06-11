@@ -1,5 +1,6 @@
 package com.example.finalprojectassistance;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import soup.neumorphism.NeumorphCardView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,10 +58,53 @@ public class HomeFragment extends Fragment {
         }
     }
 
+
+
+    //DECLARING VAR
+    NeumorphCardView card_make_orders;
+    NeumorphCardView card_make_complaints;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        //return inflater.inflate(R.layout.fragment_home, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        //Initializing =\ activity directions
+
+        card_make_orders.findViewById(R.id.card_make_orders);
+        card_make_complaints.findViewById(R.id.card_make_complaints);
+
+
+
+
+        //ON CLICK EVENT TO OPEN UP DIFFERENT ACTIVITIES
+        card_make_orders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getContext(),MakeOrderActivity.class));
+
+
+            }
+        });//End event Open orders
+
+
+        card_make_complaints.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(),MakeComplaintsActivity.class));
+
+
+            }
+        });//End event Open complaints
+
+
+
+
+        return view;
     }
 }

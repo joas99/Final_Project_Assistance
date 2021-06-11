@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProjectAssistance">
-        <activity android:name=".Admin_Dashboard"></activity>
+        <activity android:name=".MakeComplaintsActivity"></activity>
+        <activity android:name=".MakeOrderActivity" />
+        <activity android:name=".ViewClientsActivity" />
+        <activity android:name=".ViewWorkersActivity" />
+        <activity android:name=".ViewComplaintsActivity" />
+        <activity android:name=".ViewOrdersActivity" />
+        <activity
+            android:name=".Admin_Dashboard"
+            android:theme="@style/FullScren" />
         <activity android:name=".Register_activity" />
         <activity android:name=".Login_activity" />
         <activity android:name=".MainActivity">

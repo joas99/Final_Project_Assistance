@@ -1,5 +1,6 @@
 package com.example.finalprojectassistance;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import soup.neumorphism.NeumorphCardView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,10 +58,68 @@ public class AdminHomeFragment extends Fragment {
         }
     }
 
+    //DECLARING VAR
+    NeumorphCardView card_view_orders;
+    NeumorphCardView card_view_complaints;
+    NeumorphCardView card_view_worker;
+    NeumorphCardView card_view_client;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_admin_home, container, false);
+        //return inflater.inflate(R.layout.fragment_admin_home, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_admin_home, container, false);
+
+        //Initializing =\ activity directions
+
+        card_view_orders.findViewById(R.id.card_view_orders);
+        card_view_complaints.findViewById(R.id.card_view_complaints);
+        card_view_worker.findViewById(R.id.card_view_worker);
+        card_view_client.findViewById(R.id.card_view_client);
+
+
+
+        //ON CLICK EVENT TO OPEN UP DIFFERENT ACTIVITIES
+        card_view_orders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getContext(),ViewOrdersActivity.class));
+
+
+            }
+        });//End event Open orders
+
+
+        card_view_complaints.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(),ViewComplaintsActivity.class));
+
+            }
+        });//End event Open complaints
+
+        card_view_worker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getContext(),ViewWorkersActivity.class));
+            }
+        });//End event Open orders
+
+        card_view_client.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getContext(),ViewClientsActivity.class));
+
+            }
+        });//End event Open orders
+
+
+
+        return view;
     }
 }
