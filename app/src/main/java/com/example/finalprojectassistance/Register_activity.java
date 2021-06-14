@@ -22,10 +22,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
+import soup.neumorphism.NeumorphCardView;
+
 public class Register_activity extends AppCompatActivity {
 
     EditText fullName, email, password, phone, address;
-    AppCompatButton registerBtn;
+    NeumorphCardView registerBtn;
     TextView goToLogin;
     boolean valid = true;
 
@@ -51,6 +53,18 @@ public class Register_activity extends AppCompatActivity {
         address =  findViewById(R.id.registerAddress);
         registerBtn =  findViewById(R.id.registerBtn);
         goToLogin = findViewById(R.id.goToLogin);
+
+
+
+        //Goto Login click event
+
+        goToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Login_activity.class));
+
+            }
+        });
 
 
         registerBtn.setOnClickListener(new View.OnClickListener() {

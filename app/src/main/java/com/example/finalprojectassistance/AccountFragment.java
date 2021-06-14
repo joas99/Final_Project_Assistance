@@ -1,12 +1,17 @@
 package com.example.finalprojectassistance;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import soup.neumorphism.NeumorphCardView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,10 +60,51 @@ public class AccountFragment extends Fragment {
         }
     }
 
+    AppCompatButton terms,faq;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account, container, false);
+        View view = inflater.inflate(R.layout.fragment_account, container, false);
+
+        //Initializing =\ activity directions
+
+        terms = (AppCompatButton) view.findViewById(R.id.termsBtn);
+        faq = (AppCompatButton) view.findViewById(R.id.faqBtn);
+
+
+
+        terms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder termsDialog = new AlertDialog.Builder(v.getContext());
+                termsDialog.setTitle("Terms and Conditions");
+                termsDialog.setMessage(" " +
+                        "Lorem upseum  Enter Your Email To Receive reset Link lorem" +
+                        "Lorem upseum  Enter Your Email To Receive reset Link lorem" +
+                        "Lorem upseum  Enter Your Email To Receive reset Link lorem" +
+                        "Lorem upseum  Enter Your Email To Receive reset Link lorem" +
+                        "Lorem upseum  Enter Your Email To Receive reset Link lorem" +
+                        "Lorem upseum  Enter Your Email To Receive reset Link lorem" +
+                        "Lorem upseum  Enter Your Email To Receive reset Link lorem");
+                termsDialog.setNegativeButton("I Agreed", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        //Closing the dialog
+
+                    }
+                });
+
+                //Displaying The forgot password dialog
+                termsDialog.create().show();
+
+                //Displaying The forgot password dialog
+                termsDialog.create().show();
+            }
+        });
+
+
+        return view;
     }
 }

@@ -4,6 +4,147 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MakeComplaintsActivity">
+    tools:context=".MakeComplaintsActivity"
+    android:background="@color/background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerBg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        android:background="@drawable/header_background"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Report"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold"
+            android:textColor="@color/browser_actions_bg_grey"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/headerBg"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_60sdp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/card1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:elevation="@dimen/_5sdp"
+                    app:neumorph_backgroundColor="@color/gold"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/light_shadow"
+                    app:neumorph_shapeType="flat"
+                    app:neumorph_shapeAppearance="@style/NeumorphismCard">
+
+                    <EditText
+                        android:id="@+id/complaint_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:hint="Tap in a short title of your complain..."
+                        android:background="@drawable/edit_text"
+                        />
+                </soup.neumorphism.NeumorphCardView>
+                <!--            =========================================================-->
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/card2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:elevation="@dimen/_5sdp"
+                    app:neumorph_backgroundColor="@color/lightGray"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/light_shadow"
+                    app:neumorph_shapeType="flat"
+                    app:neumorph_shapeAppearance="@style/NeumorphismCard">
+
+                    <EditText
+                        android:id="@+id/agent_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:hint="The name of the agent or in case..."
+                        android:background="@drawable/edit_text"/>
+                </soup.neumorphism.NeumorphCardView>
+                <!--            =========================================================-->
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/card3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:elevation="@dimen/_5sdp"
+                    app:neumorph_backgroundColor="@color/lessDanger"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/light_shadow"
+                    app:neumorph_shapeType="flat"
+                    app:neumorph_shapeAppearance="@style/NeumorphismCard">
+
+                    <EditText
+                        android:id="@+id/complaint_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:hint="Tap in your complain..."
+                        android:background="@drawable/edit_text"/>
+                </soup.neumorphism.NeumorphCardView>
+
+
+                <!--            =========================================================-->
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/Btn"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginStart="@dimen/_50sdp"
+                    android:layout_marginEnd="@dimen/_50sdp"
+                    android:elevation="@dimen/_5sdp"
+                    app:neumorph_backgroundColor="@color/danger"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/light_shadow"
+                    app:neumorph_shapeType="flat"
+                    app:neumorph_shapeAppearance="@style/NeumorphismCard">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/submitBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/_15sdp"
+                        android:textStyle="bold"
+                        android:textColor="@color/lightGray"
+                        android:background="@drawable/submit_btn"
+
+
+                        android:text="Submit"/>
+
+
+                </soup.neumorphism.NeumorphCardView>
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

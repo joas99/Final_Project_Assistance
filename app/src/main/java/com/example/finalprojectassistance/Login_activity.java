@@ -24,11 +24,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.jetbrains.annotations.NotNull;
 
+import soup.neumorphism.NeumorphCardView;
+
 public class Login_activity extends AppCompatActivity {
 
     TextView goToRegister, forgotPassword;
     EditText loginEmail,loginPassword;
-    AppCompatButton loginBtn;
+    NeumorphCardView loginBtn;
 
     boolean valid = true;
     FirebaseAuth fAuth;
@@ -195,7 +197,35 @@ public class Login_activity extends AppCompatActivity {
         super.onStart();
         if (FirebaseAuth.getInstance().getCurrentUser() != null){
 
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            DocumentReference df = FirebaseFirestore.getInstance().collection("Users").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                @Override
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                    //checking wich user is logged in
+                    if (documentSnapshot.getString("Admin") != null){
+                        //user is admin
+                        startActivity(new Intent(getApplicationContext(),Admin_Dashboard.class));
+                        finish();
+                    }//End if statement
+
+                    if (documentSnapshot.getString("Client") != null){
+                        //user is admin
+                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        finish();
+                    }//end if statement
+
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull @NotNull Exception e) {
+                    //
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(getApplicationContext(),Login_activity.class));
+                    finish();
+                }
+            });
+
+            //startActivity(new Intent(getApplicationContext(),MainActivity.class));
             finish();
         }//End if statement
 

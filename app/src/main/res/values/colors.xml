@@ -13,6 +13,8 @@
     <color name="lightGray">#D1D1D1</color>
     <color name="gold">#FF9800</color>
     <color name="danger">#F42314</color>
+    <color name="lessDanger">#F1837C</color>
+    <color name="success">#02BF14</color>
 
         <!--  NEURMOPHISM   -->
     <color name="background">#E4EBF5</color>

@@ -14,18 +14,58 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/Header_background"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:background="@drawable/header_background"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent">
+                <TextView
+                    android:id="@+id/titleHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="What do you need?"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold"
+                    android:textColor="@color/light_shadow"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <soup.neumorphism.NeumorphCardView
+
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:neumorph_backgroundColor="@color/background"
+
+                    app:layout_constraintVertical_bias="0.085"
+                    app:neumorph_shadowElevation="@dimen/_3sdp"
+                    app:neumorph_shapeType="basin">
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/logoutBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="logout"
+                        android:background="@drawable/submit_btn"
+                        />
+
+                </soup.neumorphism.NeumorphCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/container"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
+
 
                 app:constraint_referenced_ids="card_make_orders, card_make_complaints, card_view_worker,card_view_client"
                 app:flow_horizontalGap="3dp"
@@ -59,7 +99,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="View Orders"
+                        android:text="View Services"
                         android:textSize="14sp"
                         android:textStyle="bold"
                         />
@@ -92,7 +132,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="View complaints"
+                        android:text="Report"
                         android:textSize="14sp"
                         android:textStyle="bold"
                         />
@@ -125,7 +165,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="List Worker"
+                        android:text="none"
                         android:textSize="14sp"
                         android:textStyle="bold"
                         />
@@ -158,7 +198,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="List Client"
+                        android:text="none"
                         android:textSize="14sp"
                         android:textStyle="bold"
                         />
@@ -166,6 +206,8 @@
                 </LinearLayout>
 
             </soup.neumorphism.NeumorphCardView>
+
+
 
             <soup.neumorphism.NeumorphCardView
                 android:id="@+id/feeds"
@@ -228,7 +270,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        app:layout_constraintGuide_percent="0.5" />
+                        app:layout_constraintGuide_begin="59dp" />
 
                     <TextView
                         android:id="@+id/thks"

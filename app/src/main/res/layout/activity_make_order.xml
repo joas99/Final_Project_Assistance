@@ -4,6 +4,283 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MakeOrderActivity">
+    tools:context=".MakeOrderActivity"
+    android:background="@color/background">
+
+
+    <TextView
+        android:id="@+id/titleHelp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please choose a category"
+        android:textSize="@dimen/_16sdp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="@dimen/_8sdp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/titleHelp"
+        android:layout_marginTop="@dimen/_50sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical">
+        <soup.neumorphism.NeumorphCardView
+            android:id="@+id/cat_babysitter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toBottomOf="@id/card_view_worker"
+            app:neumorph_backgroundColor="@color/gold"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            android:elevation="@dimen/_5sdp"
+
+            app:neumorph_shapeAppearance="@style/NeumorphismCard">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/prt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/img_feed"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:src="@drawable/thankyou"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:riv_corner_radius="@dimen/_8sdp"/>
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5"/>
+
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/cardRight"
+                    android:layout_width="@dimen/_48sdp"
+                    android:layout_height="@dimen/_48sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:neumorph_shadowElevation="@dimen/_3sdp"
+                    app:neumorph_shapeType="basin"
+                    android:visibility="gone">
+
+                </soup.neumorphism.NeumorphCardView>
+
+                <TextView
+                    android:id="@+id/thks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:text="Baby Sitter"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints"
+
+                    app:layout_constraintEnd_toStartOf="@id/cardRight"
+                    app:layout_constraintStart_toEndOf="@id/img_feed"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="Seeing forward to seeing you again"
+                    tools:ignore="missingConstraints"
+                    app:layout_constraintStart_toEndOf="@id/img_feed"
+                    app:layout_constraintTop_toBottomOf="@id/thks"
+                    android:textSize="@dimen/_13sdp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </soup.neumorphism.NeumorphCardView>
+
+<!--        ======================================================================-->
+
+        <soup.neumorphism.NeumorphCardView
+            android:id="@+id/cat_plumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toBottomOf="@id/card_view_worker"
+            app:neumorph_backgroundColor="@color/gold"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            android:elevation="@dimen/_5sdp"
+            app:neumorph_shapeAppearance="@style/NeumorphismCard">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/prt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/img_plumber"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:src="@drawable/thankyou"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:riv_corner_radius="@dimen/_8sdp"/>
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5"/>
+
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/cardRight2"
+                    android:layout_width="@dimen/_48sdp"
+                    android:layout_height="@dimen/_48sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:neumorph_shadowElevation="@dimen/_3sdp"
+                    app:neumorph_shapeType="basin"
+                    android:visibility="gone">
+
+                </soup.neumorphism.NeumorphCardView>
+
+                <TextView
+                    android:id="@+id/titleCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:text="Plumber"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints"
+
+                    app:layout_constraintEnd_toStartOf="@id/cardRight2"
+                    app:layout_constraintStart_toEndOf="@id/img_plumber"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="Seeing forward to seeing you again"
+                    tools:ignore="missingConstraints"
+                    app:layout_constraintStart_toEndOf="@id/img_plumber"
+                    app:layout_constraintTop_toBottomOf="@id/titleCategory"
+                    android:textSize="@dimen/_13sdp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </soup.neumorphism.NeumorphCardView>
+
+ <!--        ======================================================================-->
+
+        <soup.neumorphism.NeumorphCardView
+            android:id="@+id/cat_electrician"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toBottomOf="@id/card_view_worker"
+            app:neumorph_backgroundColor="@color/gold"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            android:elevation="@dimen/_5sdp"
+            app:neumorph_shapeAppearance="@style/NeumorphismCard">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/prt3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/img_electrician"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_70sdp"
+                    android:src="@drawable/thankyou"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:riv_corner_radius="@dimen/_8sdp"/>
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5"/>
+
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/cardRight3"
+                    android:layout_width="@dimen/_48sdp"
+                    android:layout_height="@dimen/_48sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:neumorph_shadowElevation="@dimen/_3sdp"
+                    app:neumorph_shapeType="basin"
+                    android:visibility="gone">
+
+                </soup.neumorphism.NeumorphCardView>
+
+                <TextView
+                    android:id="@+id/titleCategory3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:text="Electrician"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints"
+
+                    app:layout_constraintEnd_toStartOf="@id/cardRight3"
+                    app:layout_constraintStart_toEndOf="@id/img_electrician"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:text="Seeing forward to seeing you again"
+                    tools:ignore="missingConstraints"
+                    app:layout_constraintStart_toEndOf="@id/img_electrician"
+                    app:layout_constraintTop_toBottomOf="@id/titleCategory3"
+                    android:textSize="@dimen/_13sdp"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </soup.neumorphism.NeumorphCardView>
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

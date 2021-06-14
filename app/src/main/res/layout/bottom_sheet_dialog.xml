@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="@dimen/_30sdp">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please select your choice"
+        android:textSize="@dimen/_19sdp"
+        android:gravity="center"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/cat_image"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:src="@drawable/thankyou"
+            app:riv_corner_radius="@dimen/_8sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/cat_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plumber"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/cat_image"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/_28sdp"
+            android:layout_marginLeft="@dimen/_15sdp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <CheckBox
+        android:id="@+id/option1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Repair      20.000ugx - 30.000ugx"
+        android:textSize="@dimen/_14sdp"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/_25sdp"
+        />
+
+    <CheckBox
+        android:id="@+id/option2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mini installation       20.000ugx - 30.000ugx"
+        android:textSize="@dimen/_14sdp"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/_25sdp"/>
+
+
+
+
+    <soup.neumorphism.NeumorphCardView
+        android:id="@+id/cat_babysitter"
+        android:layout_width="@dimen/_290sdp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="10dp"
+        android:scaleX="1"
+        android:scaleY="1"
+
+        android:elevation="@dimen/_5sdp"
+        app:neumorph_backgroundColor="@color/gold"
+        app:neumorph_shadowColorDark="@color/dark_shadow"
+        app:neumorph_shadowColorLight="@color/light_shadow"
+        app:neumorph_shapeAppearance="@style/NeumorphismCard">
+
+        <CheckBox
+            android:id="@+id/option3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_25sdp"
+            android:text="Full Installation  20.000ugx - 30.000ugx"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/continue_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/continue_btn"
+        android:text="Continue"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_17sdp"
+        android:layout_marginBottom="@dimen/_9sdp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cancel_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cancel_btn"
+        android:text="Cancel"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/_17sdp"/>
+
+</LinearLayout>

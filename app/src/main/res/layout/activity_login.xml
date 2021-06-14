@@ -20,30 +20,44 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/loginEmail"
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:hint="Email"
-            android:paddingLeft="30dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/edit_text_background"
-            />
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
+          android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            app:neumorph_shapeType="pressed"
+            >
+
+            <EditText
+                android:id="@+id/loginEmail"
+                android:layout_width="294dp"
+                android:layout_height="57dp"
+                android:background="@drawable/edit_text_creadential"
+                android:hint="Email"
+
+                android:paddingLeft="30dp" />
+        </soup.neumorphism.NeumorphCardView>
+
+        <soup.neumorphism.NeumorphCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            app:neumorph_shapeType="pressed"
+            >
         <EditText
-            android:background="@drawable/edit_text_background"
+            android:background="@drawable/edit_text_creadential"
             android:id="@+id/loginPassword"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="15dp"
             android:hint="Password"
-            android:inputType="textVisiblePassword"
+            android:inputType="textPassword"
             android:paddingLeft="30dp" />
+        </soup.neumorphism.NeumorphCardView>
+
 
         <TextView
 
@@ -54,9 +68,8 @@
             android:textSize="20dp"
             android:textColor="#137DD1"
             android:layout_marginStart="50dp"
-
-
             />
+
 
         <TextView
             android:id="@+id/forgotPassword"
@@ -66,21 +79,30 @@
             android:text="forgot password"
             android:textColor="#137DD1"
             android:textSize="20dp"
-            android:layout_marginTop="-29dp"
-
+            android:layout_marginTop="-28dp"
             />
 
-        <androidx.appcompat.widget.AppCompatButton
+
+        <soup.neumorphism.NeumorphCardView
             android:id="@+id/loginBtn"
-            android:layout_width="200dp"
-            android:layout_height="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:neumorph_shadowElevation="@dimen/_3sdp"
+            app:neumorph_shapeType="flat"
             android:layout_marginTop="50dp"
+            app:neumorph_backgroundColor="@color/gold"
             android:layout_marginBottom="30dp"
-            android:text="Login"
-            android:textStyle="bold"
             android:layout_marginStart="100dp"
-            android:layout_marginEnd="100dp"
-            />
+            android:layout_marginEnd="100dp">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="Login"
+                android:textSize="@dimen/_20sdp"
+                android:gravity="center"
+                />
+        </soup.neumorphism.NeumorphCardView>
 
     </LinearLayout>
     </RelativeLayout>

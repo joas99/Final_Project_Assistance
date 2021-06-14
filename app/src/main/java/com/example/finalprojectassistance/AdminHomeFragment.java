@@ -3,11 +3,15 @@ package com.example.finalprojectassistance;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import soup.neumorphism.NeumorphCardView;
 
@@ -64,6 +68,11 @@ public class AdminHomeFragment extends Fragment {
     NeumorphCardView card_view_worker;
     NeumorphCardView card_view_client;
 
+    AppCompatButton logout;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -74,10 +83,23 @@ public class AdminHomeFragment extends Fragment {
 
         //Initializing =\ activity directions
 
-        card_view_orders.findViewById(R.id.card_view_orders);
-        card_view_complaints.findViewById(R.id.card_view_complaints);
-        card_view_worker.findViewById(R.id.card_view_worker);
-        card_view_client.findViewById(R.id.card_view_client);
+        card_view_orders = (NeumorphCardView) view.findViewById(R.id.card_view_orders);
+        card_view_complaints = (NeumorphCardView) view.findViewById(R.id.card_view_complaints);
+        card_view_worker = (NeumorphCardView) view.findViewById(R.id.card_view_worker);
+        card_view_client = (NeumorphCardView) view.findViewById(R.id.card_view_client);
+
+        logout = (AppCompatButton) view.findViewById(R.id.logoutBtn);
+
+
+        //Logout button
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getContext(),Login_activity.class));
+
+            }
+        });
 
 
 
