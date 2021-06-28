@@ -1,12 +1,22 @@
 package com.example.finalprojectassistance;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,6 +56,7 @@ public class AdminAccountFragment extends Fragment {
         return fragment;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,10 +66,90 @@ public class AdminAccountFragment extends Fragment {
         }
     }
 
+    AppCompatButton terms,faq;
+    TextView aPhone, aName;
+    String userID;
+
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_admin_account, container, false);
+        View view = inflater.inflate(R.layout.fragment_admin_account, container, false);
+
+        terms = (AppCompatButton) view.findViewById(R.id.termsBtn);
+        faq = (AppCompatButton) view.findViewById(R.id.faqBtn);
+
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        //Initializing =\ activity directions
+
+
+
+        aName = (TextView) view.findViewById(R.id.aname);
+        aPhone = (TextView) view.findViewById(R.id.aphone);
+
+
+        //getting userID
+        userID = fAuth.getCurrentUser().getUid();
+
+
+
+        fStore.collection("Users").document(userID).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                String name = documentSnapshot.getString("FullName");
+                String phone = documentSnapshot.getString("PhoneNumber");
+
+                aName.setText(name);
+                aPhone.setText(phone);
+            }
+        });
+
+
+        //Getting userDetails
+        //DocumentReference userRef = fStore.document("Users");
+
+
+
+
+
+
+
+        terms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder termsDialog = new AlertDialog.Builder(v.getContext());
+                termsDialog.setTitle("Terms and Conditions");
+                termsDialog.setMessage(" " +
+                        "Lorem upseum  Enter Your Email To Receive reset Link lorem" +
+                        "Lorem upseum  Enter Your Email To Receive reset Link lorem" +
+                        "Lorem upseum  Enter Your Email To Receive reset Link lorem" +
+                        "Lorem upseum  Enter Your Email To Receive reset Link lorem" +
+                        "Lorem upseum  Enter Your Email To Receive reset Link lorem" +
+                        "Lorem upseum  Enter Your Email To Receive reset Link lorem" +
+                        "Lorem upseum  Enter Your Email To Receive reset Link lorem");
+                termsDialog.setNegativeButton("I Agreed", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        //Closing the dialog
+
+                    }
+                });
+
+                //Displaying The forgot password dialog
+                termsDialog.create().show();
+
+                //Displaying The forgot password dialog
+                termsDialog.create().show();
+            }
+        });
+
+
+        return view;
     }
 }

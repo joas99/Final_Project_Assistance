@@ -19,6 +19,7 @@ public class ClientAdapter extends RecyclerView.Adapter <ClientAdapter.MyViewHol
     Context context;
     ArrayList<ClientData> clientDataArrayList;
 
+
     public ClientAdapter(Context context, ArrayList<ClientData> clientDataArrayList) {
         this.context = context;
         this.clientDataArrayList = clientDataArrayList;
@@ -44,6 +45,8 @@ public class ClientAdapter extends RecyclerView.Adapter <ClientAdapter.MyViewHol
         holder.UserEmail.setText(clientData.UserEmail);
         holder.PhoneNumber.setText(clientData.PhoneNumber);
         holder.Address.setText(clientData.Address);
+
+
 
 
     }

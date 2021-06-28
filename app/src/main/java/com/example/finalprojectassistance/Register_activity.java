@@ -19,6 +19,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -97,8 +99,19 @@ public class Register_activity extends AppCompatActivity {
 
 
                             //specifying user role
-                            userInfo.put("Client","1");
-                            df.set(userInfo);
+                            userInfo.put("Client","yes");
+                            df.set(userInfo).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    Toast.makeText(Register_activity.this,"DOCUMENT OK !!", Toast.LENGTH_SHORT).show();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull @NotNull Exception e) {
+                                    Toast.makeText(Register_activity.this,"ERROR DOCUMENT CREATION !!", Toast.LENGTH_SHORT).show();
+
+                                }
+                            });
 
 
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));

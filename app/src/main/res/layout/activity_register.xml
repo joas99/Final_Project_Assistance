@@ -14,8 +14,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ImageView
+
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:src="@drawable/ic_undraw_welcome_cats"
+                android:layout_marginStart="@dimen/_50sdp"
+                android:layout_marginEnd="@dimen/_50sdp"
+
+                />
+
           <LinearLayout
-                android:layout_marginTop="180dp"
+                android:layout_marginTop="160dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -40,26 +50,25 @@
               </soup.neumorphism.NeumorphCardView>
 
 
+              <soup.neumorphism.NeumorphCardView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:layout_marginTop="10dp"
+                  android:layout_marginBottom="15dp"
+                  app:neumorph_shapeType="pressed">
 
-            <soup.neumorphism.NeumorphCardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="15dp"
-                    app:neumorph_shapeType="pressed">
-                <EditText
-                android:id="@+id/registerEmail"
-                android:layout_width="300dp"
-                android:layout_height="50dp"
-                android:background="@drawable/edit_text_creadential"
-                android:hint="Email"
-                android:paddingLeft="30dp"
-                android:inputType="textEmailAddress"/>
-             </soup.neumorphism.NeumorphCardView>
+                  <EditText
+                      android:id="@+id/registerEmail"
+                      android:layout_width="300dp"
+                      android:layout_height="50dp"
+                      android:background="@drawable/edit_text_creadential"
+                      android:hint="Email"
+                      android:inputType="textEmailAddress"
+                      android:paddingLeft="30dp" />
+              </soup.neumorphism.NeumorphCardView>
 
-
-            <soup.neumorphism.NeumorphCardView
+              <soup.neumorphism.NeumorphCardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -120,9 +129,9 @@
                     android:layout_height="wrap_content"
                     app:neumorph_shadowElevation="@dimen/_3sdp"
                     app:neumorph_shapeType="flat"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="20dp"
                     app:neumorph_backgroundColor="@color/gold"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginBottom="20dp"
                     android:layout_gravity="center">
                     <TextView
                         android:layout_width="150dp"

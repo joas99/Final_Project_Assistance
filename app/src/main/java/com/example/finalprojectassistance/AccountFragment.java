@@ -3,6 +3,7 @@ package com.example.finalprojectassistance;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
@@ -10,6 +11,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import soup.neumorphism.NeumorphCardView;
 
@@ -60,7 +71,11 @@ public class AccountFragment extends Fragment {
         }
     }
 
+    FirebaseFirestore fStore;
+    FirebaseAuth fAuth;
     AppCompatButton terms,faq;
+     TextView cPhone, cName;
+    String userID;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -71,6 +86,51 @@ public class AccountFragment extends Fragment {
 
         terms = (AppCompatButton) view.findViewById(R.id.termsBtn);
         faq = (AppCompatButton) view.findViewById(R.id.faqBtn);
+        cName = (TextView) view.findViewById(R.id.c_name);
+        cPhone = (TextView) view.findViewById(R.id.c_phone);
+
+        fStore = FirebaseFirestore.getInstance();
+        fAuth = FirebaseAuth.getInstance();
+
+        //-------------------------------------
+
+
+
+
+        //getting userID
+         userID = fAuth.getCurrentUser().getUid();
+
+
+
+         fStore.collection("Users").document(userID).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+             @Override
+             public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                 String name = documentSnapshot.getString("FullName");
+                 String phone = documentSnapshot.getString("PhoneNumber");
+
+                 cName.setText(name);
+                 cPhone.setText(phone);
+             }
+         });
+
+//        DocumentReference dRef = FirebaseFirestore.getInstance().collection("Users").document(user.getUid());
+//                dRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+//            @Override
+//            public void onEvent(@Nullable @org.jetbrains.annotations.Nullable DocumentSnapshot value, @Nullable @org.jetbrains.annotations.Nullable FirebaseFirestoreException error) {
+//
+//                name.setText(value.get("FullName").toString());
+//                phone.setText(value.get("PhoneNumber").toString());
+//            }
+//        });
+
+
+
+
+
+
+
+
 
 
 

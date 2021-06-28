@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
                     case 1:
                         //when id is 1
                         //initialize fragment 1
-                        fragment = new NoticationFragment();
+                        fragment = new OrdersFragment();
                         break;
                     case 2:
                         //when id is 1

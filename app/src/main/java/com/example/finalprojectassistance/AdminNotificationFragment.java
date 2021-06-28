@@ -1,12 +1,26 @@
 package com.example.finalprojectassistance;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,10 +69,75 @@ public class AdminNotificationFragment extends Fragment {
         }
     }
 
+    RecyclerView recyclerView;
+    FirebaseFirestore fStore;
+    ArrayList<AdminNotificationData> adminNotificationDataArrayList;
+    AdminNotificationAdapter adminNotificationAdapter;
+    ProgressDialog progressDialog;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_admin_notification, container, false);
+        View view =  inflater.inflate(R.layout.fragment_admin_notification, container, false);
+
+        //recyclerViewNotification
+        //setting a progess dialog
+        progressDialog = new ProgressDialog(view.getContext());
+        progressDialog.setCancelable(true);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
+
+        //initializing var
+        recyclerView = view.findViewById(R.id.recyclerViewNotification);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+
+
+//==============================================
+        //initializing db
+        fStore = FirebaseFirestore.getInstance();
+        adminNotificationDataArrayList = new ArrayList<AdminNotificationData>();
+        adminNotificationAdapter = new AdminNotificationAdapter(view.getContext(),adminNotificationDataArrayList);
+
+
+
+        //setting recyclerView to Adapter
+        recyclerView.setAdapter(adminNotificationAdapter);
+
+        //getting data from fireStore
+        EventChangeListener();
+
+        return view;
+    }
+
+    private void EventChangeListener() {
+        fStore.collection("Orders").orderBy("Address", Query.Direction.ASCENDING)
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable @org.jetbrains.annotations.Nullable QuerySnapshot value, @Nullable @org.jetbrains.annotations.Nullable FirebaseFirestoreException error) {
+                        //call back method
+                        if (error != null){
+                            if (progressDialog.isShowing())
+                                progressDialog.dismiss();
+                            Log.e("FireStore error",error.getMessage());
+                            return;
+                        }//end if statement
+
+                        for (DocumentChange dc : value.getDocumentChanges()){
+                            if (dc.getType() == DocumentChange.Type.ADDED){
+
+
+                                adminNotificationDataArrayList.add(dc.getDocument().toObject(AdminNotificationData.class));
+
+                            }//end if statement
+                            adminNotificationAdapter.notifyDataSetChanged();
+                            if (progressDialog.isShowing())
+                                progressDialog.dismiss();
+                        }//end For loop
+
+                    }
+                });
+
     }
 }

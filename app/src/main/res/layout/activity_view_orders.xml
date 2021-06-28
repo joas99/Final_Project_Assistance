@@ -28,7 +28,7 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewOrderAdmin"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_width="391dp"
         android:layout_height="wrap_content"

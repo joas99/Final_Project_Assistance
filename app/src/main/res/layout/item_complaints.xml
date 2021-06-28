@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soup.neumorphism.NeumorphCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:neumorph_backgroundColor="@color/background"
+    app:neumorph_shadowColorDark="@color/dark_shadow"
+    app:neumorph_shadowColorLight="@color/light_shadow"
+    app:neumorph_shadowElevation="@dimen/_5sdp"
+    app:neumorph_shapeAppearance="@style/NeumorphismCard"
+    android:layout_margin="@dimen/_16sdp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/ic_baseline_report_24"
+                app:tint="@color/danger"
+                />
+
+            <TextView
+                android:id="@+id/complaintTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Malpractice"
+                android:textSize="@dimen/_19sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textStyle="bold"
+                />
+            <soup.neumorphism.NeumorphCardView
+                android:id="@+id/callPhone"
+                android:layout_width="@dimen/_48sdp"
+                android:layout_height="@dimen/_48sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginLeft="@dimen/_25sdp"
+
+                app:neumorph_shadowElevation="@dimen/_3sdp"
+                app:neumorph_shapeType="basin">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_margin="@dimen/_4sdp"
+                    android:src="@drawable/ic_baseline_call_24"
+                    app:tint="@color/teal_200"/>
+
+            </soup.neumorphism.NeumorphCardView>
+
+        </LinearLayout>
+
+
+
+
+        <View
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/lightGray"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"/>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginBottom="@dimen/_1sdp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Content:"
+                android:textSize="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_6sdp"/>
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lorem psum dis clarsis Lorem psum dis clarsis
+                Lorem psum dis clarsis Lorem psum dis clarsis Lorem psum dis clarsis
+                Lorem psum dis clarsis"
+                android:textSize="@dimen/_13sdp"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/lightGray"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"/>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginBottom="@dimen/_1sdp">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_account_circle_24"
+                android:layout_marginRight="@dimen/_6sdp"/>
+            <TextView
+                android:id="@+id/complainerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Johnson VSyverka"
+                android:textSize="@dimen/_15sdp"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/lightGray"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"/>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginBottom="@dimen/_1sdp">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_account_circle_24"
+                android:layout_marginRight="@dimen/_6sdp"/>
+            <TextView
+                android:id="@+id/complainerPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0773609713"
+                android:textSize="@dimen/_15sdp"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/lightGray"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_calendar"
+                android:layout_marginRight="@dimen/_6sdp"/>
+            <TextView
+                android:id="@+id/complaintdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 June 2021"
+                android:textSize="@dimen/_15sdp"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/lightGray"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_location_on_24"
+                android:layout_marginRight="@dimen/_6sdp"/>
+            <TextView
+                android:id="@+id/complainerAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kampala / Lukuku - Kirombe"
+                android:textSize="@dimen/_15sdp"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+</soup.neumorphism.NeumorphCardView>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soup.neumorphism.NeumorphCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:neumorph_backgroundColor="@color/background"
+    app:neumorph_shadowColorDark="@color/dark_shadow"
+    app:neumorph_shadowColorLight="@color/light_shadow"
+    app:neumorph_shadowElevation="@dimen/_5sdp"
+    app:neumorph_shapeAppearance="@style/NeumorphismCard"
+    android:layout_margin="@dimen/_16sdp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/ic_baseline_services"/>
+
+            <TextView
+                android:id="@+id/orderServiceAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plumber"
+                android:textSize="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:textStyle="bold"
+                />
+            <soup.neumorphism.NeumorphCardView
+                android:id="@+id/callPhoneAdmin"
+                android:layout_width="@dimen/_48sdp"
+                android:layout_height="@dimen/_48sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginLeft="@dimen/_55sdp"
+
+                app:neumorph_shadowElevation="@dimen/_3sdp"
+                app:neumorph_shapeType="basin">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_margin="@dimen/_4sdp"
+                    android:src="@drawable/ic_baseline_call_24"
+                    app:tint="@color/teal_200"/>
+
+            </soup.neumorphism.NeumorphCardView>
+
+        </LinearLayout>
+
+
+
+
+        <View
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/lightGray"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"/>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginBottom="@dimen/_1sdp">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_work"
+                android:layout_marginRight="@dimen/_6sdp"/>
+            <TextView
+                android:id="@+id/orderContentAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Repair 20.000ugx - 30.000ugx"
+                android:textSize="@dimen/_15sdp"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/lightGray"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"/>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginBottom="@dimen/_1sdp">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_account_circle_24"
+                android:layout_marginRight="@dimen/_6sdp"/>
+            <TextView
+                android:id="@+id/orderClientNameAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Johnson VSyverka"
+                android:textSize="@dimen/_15sdp"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/lightGray"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"/>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginBottom="@dimen/_1sdp">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_call_24"
+                android:layout_marginRight="@dimen/_6sdp"/>
+            <TextView
+                android:id="@+id/orderClientPhoneAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0773609713"
+                android:textSize="@dimen/_15sdp"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+        <View
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/lightGray"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_calendar"
+                android:layout_marginRight="@dimen/_6sdp"/>
+            <TextView
+                android:id="@+id/orderDateClientAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 June 2021"
+                android:textSize="@dimen/_15sdp"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="@dimen/_220sdp"
+            android:layout_height="@dimen/_2sdp"
+            android:background="@color/lightGray"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_location_on_24"
+                android:layout_marginRight="@dimen/_6sdp"/>
+            <TextView
+                android:id="@+id/orderclientAddressAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kampala / Lukuku - Kirombe"
+                android:textSize="@dimen/_15sdp"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+</soup.neumorphism.NeumorphCardView>

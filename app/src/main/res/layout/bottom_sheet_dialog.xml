@@ -23,75 +23,117 @@
             android:id="@+id/cat_image"
             android:layout_width="@dimen/_150sdp"
             android:layout_height="@dimen/_150sdp"
-            android:src="@drawable/thankyou"
+            android:src="@drawable/plumber"
             app:riv_corner_radius="@dimen/_8sdp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            />
 
         <TextView
             android:id="@+id/cat_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Plumber"
-            android:textSize="@dimen/_20sdp"
+            android:textSize="@dimen/_18sdp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/cat_image"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="@dimen/_28sdp"
-            android:layout_marginLeft="@dimen/_15sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
             />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <soup.neumorphism.NeumorphCardView
+            android:id="@+id/cat_babysitter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+
+
+
+            android:elevation="@dimen/_5sdp"
+            app:neumorph_backgroundColor="@color/background"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            app:neumorph_shapeAppearance="@style/NeumorphismCard">
+
     <CheckBox
         android:id="@+id/option1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Repair      20.000ugx - 30.000ugx"
+        android:text="Repair      5.000Fc - 15.000Fc "
         android:textSize="@dimen/_14sdp"
         android:textStyle="bold"
-        android:layout_marginBottom="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         />
+        </soup.neumorphism.NeumorphCardView>
 
+    <!--    ======================================================================-->
+    <!--    ======================================================================-->
+    <!--    ======================================================================-->
+
+
+  <soup.neumorphism.NeumorphCardView
+            android:id="@+id/opt2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_5sdp"
+            app:neumorph_backgroundColor="@color/background"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            app:neumorph_shapeAppearance="@style/NeumorphismCard">
     <CheckBox
         android:id="@+id/option2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mini installation       20.000ugx - 30.000ugx"
+        android:text="Mini installation       20.000Fc - 35.000Fc"
         android:textSize="@dimen/_14sdp"
         android:textStyle="bold"
-        android:layout_marginBottom="@dimen/_25sdp"/>
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_6sdp"/>
+
+        </soup.neumorphism.NeumorphCardView>
+
+<!--    ======================================================================-->
+<!--    ======================================================================-->
+<!--    ======================================================================-->
+
+
+<soup.neumorphism.NeumorphCardView
+            android:id="@+id/opt3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
 
 
 
-
-    <soup.neumorphism.NeumorphCardView
-        android:id="@+id/cat_babysitter"
-        android:layout_width="@dimen/_290sdp"
-        android:layout_height="wrap_content"
-
-        android:layout_marginTop="10dp"
-        android:scaleX="1"
-        android:scaleY="1"
-
-        android:elevation="@dimen/_5sdp"
-        app:neumorph_backgroundColor="@color/gold"
-        app:neumorph_shadowColorDark="@color/dark_shadow"
-        app:neumorph_shadowColorLight="@color/light_shadow"
-        app:neumorph_shapeAppearance="@style/NeumorphismCard">
+            android:elevation="@dimen/_5sdp"
+            app:neumorph_backgroundColor="@color/background"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            app:neumorph_shapeAppearance="@style/NeumorphismCard">
 
         <CheckBox
             android:id="@+id/option3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_25sdp"
-            android:text="Full Installation  20.000ugx - 30.000ugx"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:text="Full Installation  90.000Fc - 150.000Fc"
             android:textSize="@dimen/_14sdp"
             android:textStyle="bold" />
 
     </soup.neumorphism.NeumorphCardView>
 
+<!--    ===============================================-->
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/continue_btn"
         android:layout_width="match_parent"

@@ -15,6 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/reportTITLE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Report"
@@ -26,6 +27,19 @@
             android:layout_marginTop="@dimen/_10sdp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:src="@drawable/ic_undraw_personal_opinions"
+        app:layout_constraintBottom_toTopOf="@+id/container"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="40dp"
+        tools:ignore="missingConstraints" />
 
     <LinearLayout
         android:id="@+id/container"
@@ -65,26 +79,26 @@
                         />
                 </soup.neumorphism.NeumorphCardView>
                 <!--            =========================================================-->
-                <soup.neumorphism.NeumorphCardView
-                    android:id="@+id/card2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+<!--                <soup.neumorphism.NeumorphCardView-->
+<!--                    android:id="@+id/card2"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
 
-                    android:elevation="@dimen/_5sdp"
-                    app:neumorph_backgroundColor="@color/lightGray"
-                    app:neumorph_shadowColorDark="@color/dark_shadow"
-                    app:neumorph_shadowColorLight="@color/light_shadow"
-                    app:neumorph_shapeType="flat"
-                    app:neumorph_shapeAppearance="@style/NeumorphismCard">
+<!--                    android:elevation="@dimen/_5sdp"-->
+<!--                    app:neumorph_backgroundColor="@color/lightGray"-->
+<!--                    app:neumorph_shadowColorDark="@color/dark_shadow"-->
+<!--                    app:neumorph_shadowColorLight="@color/light_shadow"-->
+<!--                    app:neumorph_shapeType="flat"-->
+<!--                    app:neumorph_shapeAppearance="@style/NeumorphismCard">-->
 
-                    <EditText
-                        android:id="@+id/agent_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_50sdp"
-                        android:paddingLeft="@dimen/_10sdp"
-                        android:hint="The name of the agent or in case..."
-                        android:background="@drawable/edit_text"/>
-                </soup.neumorphism.NeumorphCardView>
+<!--                    <EditText-->
+<!--                        android:id="@+id/agent_name"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="@dimen/_50sdp"-->
+<!--                        android:paddingLeft="@dimen/_10sdp"-->
+<!--                        android:hint="The name of the agent or in case..."-->
+<!--                        android:background="@drawable/edit_text"/>-->
+<!--                </soup.neumorphism.NeumorphCardView>-->
                 <!--            =========================================================-->
                 <soup.neumorphism.NeumorphCardView
                     android:id="@+id/card3"
@@ -101,7 +115,7 @@
                     <EditText
                         android:id="@+id/complaint_content"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_height="@dimen/_100sdp"
                         android:paddingLeft="@dimen/_10sdp"
                         android:hint="Tap in your complain..."
                         android:background="@drawable/edit_text"/>
@@ -122,6 +136,13 @@
                     app:neumorph_shadowColorLight="@color/light_shadow"
                     app:neumorph_shapeType="flat"
                     app:neumorph_shapeAppearance="@style/NeumorphismCard">
+
+                    <ProgressBar
+                        android:id="@+id/progress_bar"
+                        android:visibility="gone"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"/>
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/submitBtn"

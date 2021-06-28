@@ -23,7 +23,6 @@
         app:mbn_countBackgroundColor="@color/danger"
         app:mbn_countTextColor="@color/white"
         app:mbn_defaultIconColor="@color/teal_700"
-
         app:mbn_shadowColor="@color/teal_700"
         app:mbn_backgroundBottomColor="@color/black"/>
 

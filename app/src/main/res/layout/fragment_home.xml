@@ -92,9 +92,9 @@
                     android:orientation="vertical"
                     android:padding="15dp">
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:src="@drawable/ic_account_circle_24"/>
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_undraw_chore_list_"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -125,9 +125,9 @@
                     android:orientation="vertical"
                     android:padding="15dp">
                     <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:src="@drawable/ic_notifications_24"/>
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_undraw_notify_re_65on"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -160,7 +160,8 @@
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="36dp"
                         android:layout_height="36dp"
-                        android:src="@drawable/ic_home_24"/>
+                        android:src="@drawable/ic_home_24"
+                        android:visibility="invisible"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -168,6 +169,7 @@
                         android:text="none"
                         android:textSize="14sp"
                         android:textStyle="bold"
+                        android:visibility="invisible"
                         />
 
                 </LinearLayout>
@@ -193,7 +195,8 @@
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="36dp"
                         android:layout_height="36dp"
-                        android:src="@drawable/ic_format_list_bulleted_24"/>
+                        android:src="@drawable/ic_format_list_bulleted_24"
+                        android:visibility="invisible"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -201,6 +204,7 @@
                         android:text="none"
                         android:textSize="14sp"
                         android:textStyle="bold"
+                        android:visibility="invisible"
                         />
 
                 </LinearLayout>
@@ -237,15 +241,15 @@
 
 
 
-                    <com.makeramen.roundedimageview.RoundedImageView
-                        android:id="@+id/img_feed"
-                        android:layout_width="@dimen/_100sdp"
-                        android:layout_height="@dimen/_70sdp"
-                        android:src="@drawable/thankyou"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:riv_corner_radius="@dimen/_8sdp"/>
+<!--                    <com.makeramen.roundedimageview.RoundedImageView-->
+<!--                        android:id="@+id/img_feed"-->
+<!--                        android:layout_width="@dimen/_100sdp"-->
+<!--                        android:layout_height="@dimen/_70sdp"-->
+<!--                        android:src="@drawable/thankyou"-->
+<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent"-->
+<!--                        app:riv_corner_radius="@dimen/_8sdp"/>-->
 
                     <soup.neumorphism.NeumorphCardView
                         android:id="@+id/cardRight"
@@ -285,7 +289,7 @@
                         tools:ignore="MissingConstraints"
 
                         app:layout_constraintEnd_toStartOf="@id/cardRight"
-                        app:layout_constraintStart_toEndOf="@id/img_feed"/>
+                        />
 
                     <TextView
                         android:layout_width="0dp"
@@ -295,9 +299,10 @@
                         android:layout_marginTop="@dimen/_2sdp"
                         android:text="Seeing forward to seeing you again"
                         app:layout_constraintEnd_toStartOf="@id/cardRight"
-                        app:layout_constraintStart_toEndOf="@id/img_feed"
+
                         app:layout_constraintTop_toBottomOf="@id/thks"
                         android:textSize="@dimen/_13sdp"
+                        tools:ingore="missingConstraints"
                         />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

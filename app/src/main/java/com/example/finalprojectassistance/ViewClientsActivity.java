@@ -55,7 +55,7 @@ public class ViewClientsActivity extends AppCompatActivity {
 
         //setting a progess dialog
         progressDialog = new ProgressDialog(this);
-        progressDialog.setCancelable(false);
+        progressDialog.setCancelable(true);
         progressDialog.setMessage("Loading...");
         progressDialog.show();
 
@@ -63,17 +63,28 @@ public class ViewClientsActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        phoneNumber.findViewById(R.id.clientPhone);
-        callbtn.findViewById(R.id.callPhone);
+        //phoneNumber.findViewById(R.id.clientPhone);
+//        callbtn.findViewById(R.id.callPhoneViewClient);
 
 
-        //Setting the normal call
-        callbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                makePhoneCall();
-            }
-        });
+
+//================================================================================================
+//fetching in an array
+
+
+
+
+
+
+//================================================================================================
+
+//        //Setting the normal call
+//        callbtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                makePhoneCall();
+//            }
+//        });
 
 
 
@@ -128,6 +139,8 @@ public class ViewClientsActivity extends AppCompatActivity {
                     }
                 });
     }//End eventChangeListener
+
+
 
 
 
